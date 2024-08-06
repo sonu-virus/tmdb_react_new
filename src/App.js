@@ -6,7 +6,6 @@ import Layout from "./pages/layout/layout";
 function App() {
   return (
     <Layout>
-      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
