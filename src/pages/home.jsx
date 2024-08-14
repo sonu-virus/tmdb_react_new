@@ -12,8 +12,7 @@ const Home = () => {
   const moviePoster = async () => {
     try {
       const { data } = await apiClient.getMoviePoster();
-      console.log(data.results);
-      setMPos(data.results);
+      setMPos(data?.results);
     } catch (err) {
       console.log(err);
     }
@@ -40,9 +39,9 @@ const Home = () => {
           {mPos?.map((data, i) => (
             <SwiperSlide key={i}>
               <div
-                className="bg-cover bg-center h-screen"
+                className="bg-cover bg-center h-[600px]"
                 style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.poster_path})`,
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.poster_path})`,
                 }}
               >
                 <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent">
